@@ -14,6 +14,7 @@ import {
   InputRightElement,
   InputGroup,
   useToast,
+  Flex,
 } from "@chakra-ui/core";
 import { SearchIcon } from "@chakra-ui/icons";
 import { getCuratedPhotos, getQueryPhotos } from "../lib/api";
@@ -105,6 +106,28 @@ export default function Home({ data }) {
             </WrapItem>
           ))}
         </Wrap>
+        <Flex my="1rem" justify="center" align="center" direction="column">
+          <a target="_blank" href="https://www.pexels.com">
+            <Image
+              src="https://images.pexels.com/lib/api/pexels.png"
+              height={50}
+              width={125}
+            />
+          </a>
+          <a
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by
+            <Image
+              src="/vercel.svg"
+              width={283 / 4}
+              height={64 / 4}
+              alt="Vercel Logo"
+            />
+          </a>
+        </Flex>
       </Box>
     </div>
   );
