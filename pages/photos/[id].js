@@ -63,7 +63,6 @@ export default function Photos({ pic }) {
               height={pic.height / 4}
               quality={50}
               priority
-              loading="eager"
             />
           </Box>
         </Center>
