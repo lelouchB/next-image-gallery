@@ -58,7 +58,7 @@ export default function Photos({ pic }) {
         <Center>
           <Box as="a" target="_blank" variant="outline" href={pic.url}>
             <Image
-              src={pic.src.large2x}
+              src={pic.src.original}
               width={pic.width / 4}
               height={pic.height / 4}
               quality={50}
