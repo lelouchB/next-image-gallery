@@ -12,10 +12,8 @@ import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import { InfoIcon, AtSignIcon } from "@chakra-ui/icons";
-
-export default function Photos({pic}) {
-  
-    return (
+export default function Photos({ pic }) {  
+  return (
       <Box p="2rem" bg="gray.200" minH="100vh">
       <Head>
         <title> Image: {pic.id}</title>
@@ -42,16 +40,16 @@ export default function Photos({pic}) {
         </Box>{" "}
         <Spacer />
         <Link href={`/`} >
-             <Button
-                as="a"
-                borderRadius="full"
-                colorScheme="pink"
-                fontSize="lg"
-                size="lg"
-                cursor="pointer"
-             >
-                🏠 Home
-             </Button>
+        <Button
+          as="a"
+          borderRadius="full"
+          colorScheme="pink"
+          fontSize="lg"
+          size="lg"
+          cursor="pointer"
+        >
+          🏠 Home
+        </Button>
         </Link>
       </Flex>
       <Divider my="1rem" />
@@ -70,15 +68,14 @@ export default function Photos({pic}) {
       </Center>
     </Box>
     
-    )
-  }
+  );
+}
 
-  export async function getServerSideProps({ params }) {
-    const pic = await getPhotoById(params.id);
-    return {
-      props: {
-        pic,
-      },
-    };
-  }
-  
+export async function getServerSideProps({ params }) {
+  const pic = await getPhotoById(params.id);
+  return {
+    props: {
+      pic,
+    },
+  };
+}
