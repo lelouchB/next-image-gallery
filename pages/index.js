@@ -1,8 +1,12 @@
 //pages/index.js
+import React, { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { Box, Container, Text } from "@chakra-ui/core";
+import { getCuratedPhotos } from "../lib/api";
 
-export default function Home() {
+export default function Home({ data }) {
+  const [photos, setPhotos] = useState(data);
   return (
     <div>
       <Head>
@@ -22,7 +26,27 @@ export default function Home() {
             NextJS Image Gallery
           </Text>
         </Container>
+        {
+  photos.map((pic) => (
+    <Image
+      src={pic.src.portrait}
+      height={600}
+      width={400}
+      alt={pic.url}
+    />
+  ))
+}
+
       </Box>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const data = await getCuratedPhotos();
+  return {
+    props: {
+      data,
+    },
+  };
 }
