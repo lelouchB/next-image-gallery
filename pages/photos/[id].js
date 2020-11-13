@@ -56,7 +56,7 @@ export default function Photos({ pic }) {
         <Divider my="1rem" />
       
         <Center>
-          <Box as="a" target="_blank" variant="outline" href={pic.url}>
+          <Box as="a" target="_blank" href={pic.url}>
             <Image
               src={pic.src.original}
               width={pic.width / 4}
