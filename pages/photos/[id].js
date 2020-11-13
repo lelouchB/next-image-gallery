@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/core";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 import { InfoIcon, AtSignIcon } from "@chakra-ui/icons";
 
 export default function Photos({ pic }) {  
@@ -39,9 +40,9 @@ export default function Photos({ pic }) {
             <InfoIcon focusable="true" boxSize="2rem" color="red.500" />{" "}
           </Box>{" "}
           <Spacer />
+          <Link href={`/`} >
           <Button
             as="a"
-            href={`/`}
             borderRadius="full"
             colorScheme="pink"
             fontSize="lg"
@@ -49,6 +50,7 @@ export default function Photos({ pic }) {
           >
             🏠 Home
           </Button>
+          </Link>
         </Flex>
         <Divider my="1rem" />
       
