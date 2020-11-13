@@ -47,7 +47,7 @@ export default function Photos({ pic }) {
             colorScheme="pink"
             fontSize="lg"
             size="lg"
-            _hover={{cursor:"pointer"}}
+            cursor="pointer"
           >
             🏠 Home
           </Button>
